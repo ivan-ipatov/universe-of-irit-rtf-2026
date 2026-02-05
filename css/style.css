@@ -17,53 +17,6 @@ html {
   line-height: 1.4;
 }
 
-.container {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-@media (min-width: 640px) {
-  .container {
-    max-width: 640px;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .container {
-    max-width: 768px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .container {
-    max-width: 1024px;
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
-
-@media (min-width: 1280px) {
-  .container {
-    max-width: 1280px;
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
-}
-
-@media (min-width: 1536px) {
-  .container {
-    max-width: 1536px;
-    padding-left: 5rem;
-    padding-right: 5rem;
-  }
-}
-
-
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
@@ -397,6 +350,10 @@ body.is-menu-open {
   margin-top: 5vh;
 }
 
+.features h2 {
+  margin-top: 10vh;
+}
+
 /* Video block (как на макете: большой серый прямоугольник + бейдж снизу справа) */
 #how {
   position: relative;
@@ -437,6 +394,14 @@ body.is-menu-open {
   box-shadow: 0 10px 26px rgba(11, 11, 12, 0.06);
 }
 
+.card--tilt1,
+.card--tilt2,
+.card--tilt3,
+.card--tilt4 {
+  position: relative;
+  transition: transform 0.14s ease;
+}
+
 .card__title {
   margin: 0 0 8px;
   color: var(--primary);
@@ -473,31 +438,11 @@ body.is-menu-open {
 .card--tilt3:hover,
 .card--tilt4:hover {
   transform: rotate(0deg) translateY(-2px);
-  transition: transform 0.14s ease;
 }
 
-.card--tilt1::before {
-  content: url("/img/close.svg");
-  position: absolute;
-  top: 5%;
-  right: 1%;
-}
-
-.card--tilt2::before {
-  content: url("/img/close.svg");
-  position: absolute;
-  top: 5%;
-  right: 1%;
-}
-
-.card--tilt3::before {
-  content: url("/img/close.svg");
-  position: absolute;
-  top: 5%;
-  right: 1%;
-
-}
-
+.card--tilt1::before,
+.card--tilt2::before,
+.card--tilt3::before,
 .card--tilt4::before {
   content: url("/img/close.svg");
   position: absolute;
@@ -554,9 +499,13 @@ body.is-menu-open {
   margin-bottom: 10px;
 }
 
-.reg__content > .btn--big, .poster__img {
+.reg__content > .btn--big {
   width: 100%;
-  order: 1;
+}
+
+.poster__img {
+  width: 100%;
+  display: block;
 }
 
 /* Footer */
@@ -567,66 +516,58 @@ footer {
   background: #79CBF7;
 }
 
-.tabs-1 {
+.tabs-1,
+.tabs-2,
+.tabs-3 {
   position: relative;
-  background: #6D6C6A;
   height: 36px;
   transition: transform 0.14s ease;
+}
+
+.tabs-1 {
+  background: #6D6C6A;
 }
 
 .tabs-2 {
-  position: relative;
   background: #F0F0F0;
-  height: 36px;
-  transition: transform 0.14s ease;
 }
 
 .tabs-3 {
-  position: relative;
   background: #79CBF7;
-  height: 36px;
-  transition: transform 0.14s ease;
+}
+
+.tabs-1 > .tab,
+.tabs-2 > .tab,
+.tabs-3 > .tab {
+  position: absolute;
+  height: 64px;
+  width: 200px;
+  bottom: 0;
+  display: grid;
+  border-radius: 20px;
 }
 
 .tabs-1 > .tab {
-  position: absolute;
   background: #6D6C6A;
-  height: 64px;
-  width: 200px;
-  bottom: 0;
   left: calc(75% - 100px);
-  display: grid;
   place-items: center;
   place-content: center;
-  border-radius: 20px;
 }
 
 .tabs-2 > .tab {
-  position: absolute;
   background: #F0F0F0;
-  height: 64px;
-  width: 200px;
-  bottom: 0;
   left: calc(50% - 100px);
-  display: grid;
   padding-top: 5px;
   justify-content: center;
   align-items: start;
-  border-radius: 20px;
 }
 
 .tabs-3 > .tab {
-  position: absolute;
   background: #79CBF7;
-  height: 64px;
-  width: 200px;
-  bottom: 0;
   left: calc(25% - 100px);
-  display: grid;
   padding-top: 5px;
   justify-content: center;
   align-items: start;
-  border-radius: 20px;
 }
 
 .tab > svg {
@@ -648,10 +589,6 @@ footer {
 
   .nav {
     justify-content: flex-end;
-  }
-
-  .hero__grid {
-    grid-template-columns: 1fr;
   }
 
   .cards .card:nth-child(1),
@@ -697,7 +634,6 @@ footer {
   }
 
   .card--tilt1 {
-    position: relative;
     transform: rotate(-2deg);
     width: 75%;
   }
@@ -722,35 +658,6 @@ footer {
     justify-self: end;
   }
 
-  .card--tilt1::before {
-    content: url("/img/close.svg");
-    position: absolute;
-    top: 5%;
-    right: 1%;
-  }
-
-  .card--tilt2::before {
-    content: url("/img/close.svg");
-    position: absolute;
-    top: 5%;
-    right: 1%;
-  }
-
-  .card--tilt3::before {
-    content: url("/img/close.svg");
-    position: absolute;
-    top: 5%;
-    right: 1%;
-
-  }
-
-  .card--tilt4::before {
-    content: url("/img/close.svg");
-    position: absolute;
-    top: 5%;
-    right: 1%;
-  }
-
   .reg {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -764,20 +671,11 @@ footer {
     order: 2 ;
   }
 
-  .tabs-1 > .tab {
-    width: 200px;
-  }  .tabs-2 > .tab {
-    width: 200px;
-  }  .tabs-3 > .tab {
-    width: 200px;
+  .tabs-1,
+  .tabs-2,
+  .tabs-3 {
+    height: 45px;
   }
-     .tabs-1 {
-       height: 45px ;
-     }.tabs-2 {
-       height: 45px ;
-     }.tabs-3 {
-       height: 45px ;
-     }
 
 }
 
