@@ -444,7 +444,7 @@ body.is-menu-open {
 .card--tilt2::before,
 .card--tilt3::before,
 .card--tilt4::before {
-  content: url("/img/close.svg");
+  content: url('data:image/svg+xml;base64, PHN2ZyB3aWR0aD0iMjEiIGhlaWdodD0iMjEiIHZpZXdCb3g9IjAgMCAyMSAyMSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTAuMjQ1MSIgY3k9IjEwLjI0NTEiIHI9IjkuMjY0MzkiIHRyYW5zZm9ybT0icm90YXRlKC02LjQ0MDUxIDEwLjI0NTEgMTAuMjQ1MSkiIGZpbGw9IiM2RDZDNkEiLz4KPHBhdGggZD0iTTYuMTQ4MTkgNi45Nzg3OUwxNC4zNDQzIDEzLjUxMjJNMTMuNTEyOSA2LjE0NzQzTDEwLjI0NjIgMTAuMjQ1NUw2Ljk3OTU1IDE0LjM0MzUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMS40ODIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==');
   position: absolute;
   top: 5%;
   right: 1%;
