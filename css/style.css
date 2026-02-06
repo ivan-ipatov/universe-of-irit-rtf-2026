@@ -549,7 +549,7 @@ footer {
 
 .tabs-1 > .tab {
   background: #6D6C6A;
-  left: calc(75% - 100px);
+  left: calc(75% - 125px);
   place-items: center;
   place-content: center;
 }
